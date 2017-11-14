@@ -1,0 +1,22 @@
+{{yield}}
+
+
+<div class="container popularLocations">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="section-title">Popular Locations</h1>
+    </div>
+  </div>
+  <div class="row">
+    {{#each location as |location|}}
+    <div class="col-xs-6 col-sm-3 location">
+     
+      <p class="location-city-name">
+        {{location}}
+      </p>
+      
+     
+    </div>
+    {{/each}}
+  </div>
+</div>

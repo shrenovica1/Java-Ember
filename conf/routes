@@ -1,0 +1,40 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+
++nocsrf
+POST     /singup                  controllers.UsersController.create
++nocsrf
+POST     /singin                  controllers.UsersController.signin
+
++nocsrf
+POST    /signout                  controllers.UsersController.logout
+
++nocsrf
+POST    /reservationHistory                  controllers.UsersController.getReservationHistory
+
++nocsrf
+POST    /singleRestaurant         controllers.RestaurantController.getSingleRestaurant
++nocsrf
+POST    /ratePlace                 controllers.RestaurantController.ratePlace
+
++nocsrf
+POST    /findTable                  controllers.RestaurantController.getTables
+
++nocsrf
+POST    /makeReservation             controllers.ReservationController.makeReservation
+
+
+GET     /location                  controllers.CityController.getAllCities
+GET     /restaurants               controllers.RestaurantController.getAllRestaurants
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

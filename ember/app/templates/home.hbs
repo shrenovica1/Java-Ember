@@ -1,0 +1,228 @@
+{{outlet}}
+<!---NAVIGATION BAR-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light " >
+<header>
+
+    <div id="header">
+    <div class="pozadina"></div>
+      <div class="maskHome">
+ </div>
+        <div class="container"> 
+
+ <div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+  
+  <li style="float:left "><a href="#AppName">AppName</a></li>
+  <li style="float:right "><a class="active" href="/singin">Login</a></li>
+  <li style="float:right "><a href="/restaurants">Restaurants</a></li>
+    <li style="float:right "><a href="/home">Home</a></li>
+ <div class="naslov">
+  <h1> Make a free reservation </h1>
+  <h5> Choose your table from 757 restaurants near you</h5>
+  </div>
+  </div>
+  </div>
+ 
+  {{restaurant-search}}
+    </div>
+  
+  </div>
+</header>
+</nav>
+
+
+
+  <div class="container" id="popularRestaurants" style="margin-top: 280px;"> 
+
+    <h4 style="position: center; margin-top: -42px; font-size: 30px;"> Popular for Lunch Today</h4>
+
+  <div class="container-fluid" id="popularRest">
+  {{#each model.restaurants as |restaurant|}}
+   <div style="float: left; width: 33%; padding: 0px;">
+    <div class="container" id="popularLocations" style="margin: 0px; width:33%; ">
+
+  
+  <div class="komponenta" style="margin-top: 50px; margin-left: 10px; margin-right: 70px;">
+    <div class="col-md-3 col-xs-6 col-sm-3" id="komp">
+     <div style="float:left; margin: 0; padding: 0; margin-bottom:0px; " >
+     <img src={{restaurant.imageFile}} class="rounded" id= "boja">
+     <div style=" float:left;">
+     <h5 style="padding-left: 10px;" > {{restaurant.name}}</h5>
+     </div>
+
+     
+     
+      <div class="location-city-name" style="width:140px;  ">
+      <div class="star-rating" style="float: left;" >
+
+
+      <div class="star-rating" style="float:left; width:210px; ">
+      
+
+           <div style="float:right; margin-top: 5px; padding-left:10px;">
+           <h6 > $$$$</h6>
+           </div>
+            <div style=" float:right; margin-top: 5px; padding-left:10px;">
+           <h6 > ({{restaurant.rating}})</h6>
+           </div>
+          {{star-rating restaurant.rating
+          readOnly=true
+          baseColor="#C8C8C8"
+          fillColor="#fd6f60"
+           width=15
+          height=15}}
+          <!--<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Great - 5 stars"></label>
+          <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+          <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+          <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Good - 3.5 stars"></label>
+          <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Good - 3 stars"></label>
+          <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Could be better - 2.5 stars"></label>
+          <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Could be better - 2 stars"></label>
+          <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Not so good - 1.5 stars"></label>
+          <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Bad- 1 star"></label>
+          <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Bad - 0.5 stars"></label>
+-->
+           <hr style=" display: block;margin-top: 0.5em;color: black; width:250px;border-style: inset;border-width: 1px; opacity:0.5;"/> 
+
+           <h6 style="padding-top: 0px; opacity:0.7;"> Italian | International | Mediterranean</h6>
+      </div>
+
+</div>
+
+
+        
+      </div>
+     
+         <input   type="hidden" class="form-control"  value="{{restaurant.name}}" id="restID"/>
+      
+     
+     
+       <button {{action 'select' restaurant}} class="btn  btn-reg" style="width:100%">Reserve now</button>
+        </div>
+    </div>
+  
+  </div>
+</div>
+  
+    </div>
+    {{/each}}
+    
+ 
+ </div>
+
+</div>
+
+
+
+
+
+
+<header>
+    <div id="carouselpasta">
+     <div class="pozadina"></div>
+     <div class="maskCarousel">
+ </div>
+        <div class="container" id="slike" style="width:100%;">
+       
+            
+                <div class ="col-md-12" id="menu" style="margin-left: -21px;" >
+
+                <div id="specials">
+                
+                </div>
+                 
+                    <!--CAROUSEL-->
+                    <h4 class="text-center" style="position: center; color:white; font-weight: 300; font-size: 30px;">Specials </h4>
+
+						{{#carousel-container }}
+             <div class="col-md-12 col-sm-6" id="Carouseldiv" style="margin-top: 100px; display: inline-block;;">
+						  {{#carousel-body}}
+             <div id="leftArrow">
+              {{#carousel-arrow direction="left"}}
+                  <span class="glyphicon  glyphicon-menu-left"></span>
+             
+              {{/carousel-arrow}}
+               </div>
+
+
+               <div id="rightArrow">
+           {{#carousel-arrow direction="right" }}
+                 <span class="glyphicon glyphicon-menu-right"></span>
+              {{/carousel-arrow}}
+              </div>
+
+
+						    {{#carousel-item}}
+
+						    <img src="{{unbound relativePath}}assets/pizza.jpg" class="rounded" id= "boja1">
+
+						    <img src="{{unbound relativePath}}assets/spicy.jpg" class="rounded" id= "boja1">
+
+						    <img src="{{unbound relativePath}}assets/cupcake.jpg" class="rounded" id= "boja1">
+						    
+						{{/carousel-item}}
+						    {{#carousel-item}}
+						      <img src="{{unbound relativePath}}assets/restoran-home.jpg" class="rounded">
+						    {{/carousel-item}}
+						    {{#carousel-item}}
+						      Angularjs
+						    {{/carousel-item}}
+                
+
+						  {{/carousel-body}}
+						 
+						 
+						 
+              </div>
+             
+
+						{{/carousel-container}}
+                
+                  </div>
+           
+        </div>
+    </div>
+</header>
+
+
+<div class="popularLocations" style="width: 90%; margin-left: 47px;">
+
+<h4> Popular locations</h4>
+<div class="container-fluid" id="popularLoc" style="margin-left: 230px;">
+
+
+{{#each model.locations as |loc|}}
+<div style="float: left; width: 25%; padding: 15px;">
+<h5 id="city"> {{loc}}</h5>
+<h6 id="restNo">3126 restaurants</h6>
+</div>
+{{/each}}
+</div>
+</div>
+
+
+ <div class="card">
+
+    <div class="card-block force-to-bottom">
+    <div class="container">
+ <div class="row ">
+  <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-0" style="margin-top:-24px;">
+      <li3 style="float:left " small class="text-muted"><a href="#privacy">Privacy Policy</a></li3>
+  <li3 style="float:left "><a class="term" href="#term">Term of use</a></li3>
+  <li3 style="float:left "><a href="#sitemap">Sitemap</a></li3>
+    <li3 small class="text-muted"style="float:left "><a href="#mobile">Mobile Site</a></li3>
+    <li2 style="float:right"><a class="about" href="#about">About Us</a></li2>
+    <li2 style="float:right"><a class="blog" href="#blog">Blog</a></li2>
+    <li2 style="float:right"><a class="careers" href="#careers">Careers</a></li2>
+    <li2 style="float:right" ><a class="press" href="#press">Press</a></li2>
+     <li2 style="float:right"><a class="add" href="#add">Advertise</a></li2>
+     
+</div>
+<li4 style="padding-top:15px;" >Copyright © 2016 All rights reserved.</li4>
+
+  </div>
+  </div>
+
+    </div>
+  </div>

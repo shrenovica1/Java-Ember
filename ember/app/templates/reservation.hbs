@@ -1,0 +1,101 @@
+{{outlet}}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light " style="background: white">
+<div class="container"> 
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 18px;margin-top: -24px;">
+        
+            <li style="float:left "><a href="#AppName">AppName</a></li>
+            <li style="float:right "><a class="active" href="/singin">Login</a></li>
+            <li style="float:right "><a href="/restaurants">Restaurants</a></li>
+            <li style="float:right "><a href="/home">Home</a></li>
+
+            </div>
+         </div>  
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-4" >
+            <h1>Complete your reservation</h1>
+        </div>
+
+         <div class="col-md-5 col-sm-12 col-xs-12 col-md-offset-1 ">
+            <div>
+                <div class="Reservation-detail-box">
+                    <p>Reservation Details</p>
+                    <div class="container">
+                        <div class="restaurant">
+                            <img class="restaurant-picture" src="assets/spicy.jpg">
+                        </div>
+                        <div class="details">
+                            <h6>RESTAURANT</h6>
+                            <h6>{{model.restaurant.name}}</h6>
+                        </div>
+                        <div class="details">
+                            <li>GUESTS</li>
+                            <li>DATE</li>
+                            <li>TIME</li>
+                        </div>
+                        <div class="details">
+                            <li>{{model.details.people}}</li>
+                            <li>{{model.details.date}}</li>
+                            <li>{{model.available.time}}</li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="question">
+            <p id="member" > Already a member? <a>Sign in</a></p>
+        </div>
+        
+         <div class="col-md-12 col-sm-12 col-xs-12 " id="input-forms-div"> 
+             <div class="row">
+                <div class="col">
+                <div class="reservation-group">
+                    {{input type="text" class="form-reservation" placeholder="First Name" value=firstname}}
+                </div>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                <div class="reservation-group">
+                    {{input type="text" class="form-reservation" placeholder="Last Name" value=lastname}}
+                </div>
+                </div>
+             </div>
+             <div class="row">
+                  <div class="col">
+                  <div class="reservation-group">
+                         {{input type="text" class="form-reservation" placeholder="Phone Number" value=phone}}
+                 </div>
+                 </div>
+                        <div class="w-100"></div>
+                   <div class="col">
+                        <div class="reservation-group">
+                            {{input type="text" class="form-reservation" placeholder="Phone Number" value=phone}}
+                        </div>
+                    </div>
+                
+                 </div>
+             <div class="row">
+                  <div class="col">
+                  <div class="reservation-group">
+                             {{input type="email" class="form-reservation" placeholder="Email" value=email}}
+                </div>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                <div class="reservation-group">
+                            {{input type="text" class="form-reservation" placeholder="Add a special request (optional)" value=request}}
+                 </div>
+                </div>
+                </div>
+             </div>
+            </div>
+        </div>
+    <button {{action 'onCompleteReservation' model.user model.available model.details}}>Complete Reservation</button>
+    <p>By clicking “Complete Reservation” you agree to the AppName Terms of use and Privacy Policy.</p>
+{{page-footer}}
