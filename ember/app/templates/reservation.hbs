@@ -24,35 +24,41 @@
          <div class="col-md-5 col-sm-12 col-xs-12 col-md-offset-1 ">
             <div>
                 <div class="Reservation-detail-box">
-                    <p>Reservation Details</p>
+                    <p class="reservationHead">Reservation Details</p>
                     <div class="container">
                         <div class="restaurant">
                             <img class="restaurant-picture" src="assets/spicy.jpg">
                         </div>
                         <div class="details">
-                            <h6>RESTAURANT</h6>
-                            <h6>{{model.restaurant.name}}</h6>
+                            <h6 class="reservationData" id="restaurantData">RESTAURANT</h6>
+                            <h6 class="reservationRestName">{{model.restaurant.name}}</h6>
                         </div>
                         <div class="details">
-                            <li>GUESTS</li>
-                            <li>DATE</li>
-                            <li>TIME</li>
+                            <li class="reservationData">GUESTS</li>
+                            <li class="reservationData">DATE</li>
+                            <li class="reservationData">TIME</li>
                         </div>
                         <div class="details">
                             <li>{{model.details.people}}</li>
                             <li>{{model.details.date}}</li>
-                            <li>{{model.available.time}}</li>
+                            <li>{{model.details.time}}</li>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div id="question">
-            <p id="member" > Already a member? <a>Sign in</a></p>
-        </div>
+       
         
          <div class="col-md-12 col-sm-12 col-xs-12 " id="input-forms-div"> 
+            <div class="row">
+                     <div class="col-md-10 col-sm-12 col-xs-12" > 
+             <div class="row">
+    
+            <p id="member" > Already a member? <a id="incolor" href="/singin" >Sign in</a></p>
+        </div>
+</div>
+                </div>
              <div class="row">
                 <div class="col">
                 <div class="reservation-group">
@@ -93,9 +99,17 @@
                  </div>
                 </div>
                 </div>
+                <div class="row">
+                     <div class="col-md-10 col-sm-12 col-xs-12" > 
+             <div class="row">
+    <button class="findAvailableTable" id="complete" {{action 'onCompleteReservation' model.user model.available model.details}}>Complete Reservation</button>
+    <p>By clicking “Complete Reservation” you agree to the AppName Terms of use and Privacy Policy.</p>
+</div>
+</div>
+                </div>
              </div>
             </div>
         </div>
-    <button {{action 'onCompleteReservation' model.user model.available model.details}}>Complete Reservation</button>
-    <p>By clicking “Complete Reservation” you agree to the AppName Terms of use and Privacy Policy.</p>
+
+       
 {{page-footer}}

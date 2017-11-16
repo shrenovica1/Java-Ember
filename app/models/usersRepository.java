@@ -86,7 +86,7 @@ public  class usersRepository{
     @Transactional
     public List<Object[]> getHistory(String id){
 
-        String hql="select r.id, TO_CHAR(r.reservationTime , 'DD/MM/YYYY HH24:MI:SS') from Reservation r";
+        String hql="select r.id, TO_CHAR(r.reservationTime , 'DD/MM/YYYY HH24:MI:SS' ) from Reservation r";
         Query query = JPA.em().createQuery(hql);
         List<Object[]> result= query.getResultList();
         return result;

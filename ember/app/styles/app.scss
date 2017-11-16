@@ -583,6 +583,17 @@ h6,h3{
   opacity: 1;
   }
 
+.findAvailableTable{
+  width:115px;
+  margin-top: 70px;
+  height: 56px;
+  border-radius: 0!important;
+  color: white!important;
+   background-color: #fd6f60;
+   opacity: 1;
+   border:none;
+}
+
   .searchInRestaurant{
   margin-left: 15px;
   }
@@ -767,6 +778,34 @@ color:#fd6f60!important;
   margin-left: 102px;
 }
 
-#question{
-
+.reservationData{
+  font-size:14px;
+  opacity:0.7;
+  font-weight: normal;
+}
+.reservationHead{
+  font-size:20px;
+  opacity:0.7;
+  margin-left: 15px;
+}
+.reservationRestName{
+  font-size: 20px;
+  color: #fd6f60;
+  margin-left: 15px;
+}
+#complete{
+  width: 300px;
+  height: 56px;
+  border-radius: 3px;
+  background-color: #fd6f60;
+  border: none;
+  color: white;
+  
+  
+}
+#incolor{
+  color:#fd6f60!important;
+}
+#restaurantData{
+margin-left: 15px;
 }

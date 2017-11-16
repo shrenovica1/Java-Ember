@@ -173,7 +173,8 @@ public class RestaurantController extends Controller{
         }
 
         item.put("details", Json.toJson(table));
-        item.put("available",returnList);
+        item.put("availableList",returnList);
+
 
 
         return ok(item);

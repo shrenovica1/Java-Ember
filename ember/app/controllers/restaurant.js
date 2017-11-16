@@ -19,6 +19,8 @@ export default Ember.Controller.extend({
  details: null,
  lunchMenu: null,
  dinnerMenu: null,
+ availableList:null,
+ slobodno: null,
  id: null,
  mark:null,
  //model: null,
@@ -65,7 +67,8 @@ actions:{
          success : function (odg) {
          alert(odg.details);
           self.table=odg.details;
-          self.available=odg.available.slice(0,4);
+          self.availableList=odg.availableList.slice(0,4);
+          self.available=odg.available;
           self.details=odg;
          }
 
@@ -74,6 +77,14 @@ actions:{
       this.set('table',self.table);
       this.set('details',self.details);
       this.set('available',self.available);
+      this.set('availableList',self.availableList);
+      if(self.availableList.get(0)==null){ 
+        this.send('onReserve', details,available);
+          //this.route.actions.onReserve(details,available);
+          this.transitionToRoute('reservation');
+        }
+     
+    
        this.get('singleRestaurantService').setTables(self.table);
      
       },

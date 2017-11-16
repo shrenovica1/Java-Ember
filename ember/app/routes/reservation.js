@@ -34,7 +34,7 @@ export default Ember.Route.extend({
                                         }),
         available:    this.get('reservationService').getReservationAvailableTables()
                                         .then(data => {
-                                       alert("fettablesRSTOUTEMODEL"+data);
+                                      // alert("fettablesRSTOUTEMODEL"+data);
                                             return data;
                                         })              
                                         .catch(error => {

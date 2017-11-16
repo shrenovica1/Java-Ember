@@ -5,6 +5,7 @@ version := "1.0-SNAPSHOT"
 lazy val root = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
 
 PlayKeys.externalizeResources := false
+herokuAppName in Compile:="desolate-anchorage-72729"
 
 scalaVersion := "2.12.2"
 

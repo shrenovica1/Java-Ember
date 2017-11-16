@@ -179,8 +179,8 @@
    <div class="searchInRestaurant" id="availableTables" >
       <h5>Availability on {{date}} around {{table.time}} for {{table.people}} :</h5>
      <h5>Select the best time that fits you: </h5>
-      {{#each available as |table|}}
-      <button type="button" class="btn btn-table" id="findTable" {{action 'onReserve' details table}} >
+      {{#each availableList as |table|}}
+      <button type="button" class="findAvailableTable" id="findAvailable" {{action 'onReserve' details table}} >
           {{table.time}}
         </button>
       {{/each}}
